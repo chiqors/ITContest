@@ -74,7 +74,7 @@
               } else {
                 echo "";
               }?>"
-              ><a href="<?= site_url("register") ?>">Masuk/Daftar</a></li>
+              ><a href="<?= site_url("register") ?>">Masuk / Daftar</a></li>
             <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
               <ul class="dropdown-menu">

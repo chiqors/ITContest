@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
     <div class="col-md-12">
-      <h4>Bootstrap Snipp for Datatable</h4>
+      <h4>Data Perusahaan</h4>
       <div class="table-responsive">
         <table id="mytable" class="table table-bordred table-striped">
           <thead>

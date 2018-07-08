@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-            <h4>What's new today ?</h4>
+            <h4>Berita Pekerjaan Terkini</h4>
         </div>
     </div>
     <hr>
