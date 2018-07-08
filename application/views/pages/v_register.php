@@ -1,72 +1,82 @@
-<div class="container">
-	<div class="row">
-        <div class="span12">
-    		<div class="" id="loginModal">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3>Have an Account?</h3>
-              </div>
-              <div class="modal-body">
-                <div class="well">
-                  <ul class="nav nav-tabs">
-                    <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
-                    <li><a href="#create" data-toggle="tab">Create Account</a></li>
-                  </ul>
-                  <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane active in" id="login">
-                      <form class="form-horizontal" action='' method="POST">
-                        <fieldset>
-                          <div id="legend">
-                            <legend class="">Login</legend>
-                          </div>
-                          <div class="control-group">
-                            <!-- Username -->
-                            <label class="control-label"  for="username">Username</label>
-                            <div class="controls">
-                              <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
-                            </div>
-                          </div>
+<div class="container ">
+	<div class="col-md-6 col-md-offset-3">
+    <h3>Belum Memiliki Akun?</h3>
+        <div class="well">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#login" data-toggle="tab">Masuk</a></li>
+            <li><a href="#create" data-toggle="tab">Buat Akun Baru</a></li>
+          </ul>
 
-                          <div class="control-group">
-                            <!-- Password-->
-                            <label class="control-label" for="password">Password</label>
-                            <div class="controls">
-                              <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-                            </div>
-                          </div>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active in" id="login">
+              <form action='' method="POST">
+								<label>Level User</label>
+								<select class="" name="level">
+									<option value="user">Pencari Kerja</option>
+									<option value="perusahaan">Perusahaan</option>
+								</select> <br>
+                <!-- Username -->
+                <label>Username</label>
+                <input type="text" id="username" name="username" placeholder="Username atau Email" class="form-control">
+                <!-- Password-->
+                <label>Password</label>
+                <input type="password" id="password" name="password" placeholder="Passwod" class="form-control">
+                <!-- Button -->
+                <div class=""> <button class="btn btn-success">Masuk</button> </div>
+							</form>
+						</div>
 
+            <div class="tab-pane fade" id="create">
+							<!-- Nested Tabs -->
+							<div class="well">
+			          <ul class="nav nav-tabs">
+			            <li class="active"><a href="#user" data-toggle="tab">Pencari Kerja</a></li>
+			            <li><a href="#perusahaan" data-toggle="tab">Perusahaan</a></li>
+			          </ul>
 
-                          <div class="control-group">
-                            <!-- Button -->
-                            <div class="controls">
-                              <button class="btn btn-success">Login</button>
-                            </div>
-                          </div>
-                        </fieldset>
-                      </form>
-                    </div>
-                    <div class="tab-pane fade" id="create">
-                      <form id="tab">
-                        <label>Username</label>
-                        <input type="text" value="" class="input-xlarge">
-                        <label>First Name</label>
-                        <input type="text" value="" class="input-xlarge">
-                        <label>Last Name</label>
-                        <input type="text" value="" class="input-xlarge">
-                        <label>Email</label>
-                        <input type="text" value="" class="input-xlarge">
-                        <label>Address</label>
-                        <textarea value="Smith" rows="3" class="input-xlarge">
-                        </textarea>
+			          <div id="myTabContent2" class="tab-content">
+			            <div class="tab-pane active in" id="user">
+			              <form action='' method="POST">
+												<!-- NIK -->
+												<label>NIK</label>
+												<input type="number" name="nik" placeholder="Nomor Induk Kependudukan" class="form-control">
+			                   <!-- Email -->
+			                   <label>Email</label>
+			                   <input type="email" name="email" placeholder="Email" class="form-control">
+			                   <!-- Passwod -->
+			                   <label>Password</label>
+			                   <input type="password" id="password" name="password" placeholder="Kata Sandi" class="form-control">
+			                   <!-- RepeatPasswod -->
+			                   <label>Repeat Password</label>
+			                   <input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control">
+			                   <!-- Button -->
+			                   <div class=""> <button class="btn btn-success">Daftar</button> </div>
+										</form>
+									</div>
 
-                        <div>
-                          <button class="btn btn-primary">Create Account</button>
-                        </div>
-                      </form>
-                    </div>
-                </div>
-              </div>
+			            <div class="tab-pane fade" id="perusahaan">
+			              <form id="tab">
+											<!-- Nomor SIUP -->
+											<label>No.SIUP</label>
+											<input type="number" name="no_siup" placeholder="Nomor Surat Izin Usaha" class="form-control">
+											 <!-- Email -->
+											 <label>Email</label>
+											 <input type="email" name="email" placeholder="Email" class="form-control">
+											 <!-- Passwod -->
+											 <label>Password</label>
+											 <input type="password" id="password" name="password" placeholder="Kata Sandi" class="form-control">
+											 <!-- RepeatPasswod -->
+											 <label>Repeat Password</label>
+											 <input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control">
+											 <!-- Button -->
+											 <div class=""> <button class="btn btn-primary">Daftar</button> </div>
+			              </form>
+			            </div>
+			        </div>
+						</div>
+          <!-- END of Nested Tabs -->
             </div>
         </div>
-	</div>
+      </div>
+    </div>
 </div>

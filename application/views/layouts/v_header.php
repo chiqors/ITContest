@@ -51,7 +51,7 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Notification</a></li>
-            <li><a href="<?php echo site_url("register") ?>">Daftar</a></li>
+            <li><a href="<?php echo site_url("register") ?>">Daftar / Masuk</a></li>
             <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
               <ul class="dropdown-menu">
