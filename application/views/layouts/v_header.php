@@ -43,13 +43,18 @@
             ><a href="<?php echo site_url("kerja") ?>">Kerja</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><i class="fas fa-bell"></i></a></li>
-            <li class="<?php if($this->uri->segment(1)=="register") {
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Tidak ada pemberitahuan</a></li>
+              </ul>
+            </li>
+            <li class="<?php if($this->uri->segment(1)=="sign") {
               echo "active";
             } else {
               echo "";
             }?>"
-            ><a href="<?php echo site_url("register") ?>">Daftar / Masuk</a></li>
+            ><a href="<?php echo site_url("sign") ?>">Daftar / Masuk</a></li>
             <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
               <ul class="dropdown-menu">

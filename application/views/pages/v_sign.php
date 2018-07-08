@@ -70,7 +70,7 @@
 									 	<label>Repeat Password</label>
 									 	<input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control">
 									 	<!-- Button -->
-									 	<div class=""> <button class="btn btn-primary">Daftar</button> </div>
+									 	<div class=""><button class="btn btn-primary">Daftar</button></div>
 		              </form>
 		            </div>
 		        </div>
