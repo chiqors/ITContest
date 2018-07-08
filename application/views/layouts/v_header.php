@@ -28,9 +28,26 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="<?= site_url("") ?>">Beranda <span class="sr-only">(current)</span></a></li>
-            <li><a href="<?php echo site_url("kerja") ?>">Kerja</a></li>
-            <li class="dropdown">
+            <li class="
+            <?php if($this->uri->segment(1)=="") {
+              echo "active";
+            } else {
+              echo "";
+            }?>"
+            ><a href="<?= site_url("") ?>">Beranda <span class="sr-only">(current)</span></a></li>
+            <li class="<?php if($this->uri->segment(1)=="kerja") {
+              echo "active";
+            } else {
+              echo "";
+            }?>"
+            ><a href="<?php echo site_url("kerja") ?>">Kerja</a></li>
+            <li class="dropdown
+            <?php if($this->uri->segment(1)=="lamar") {
+              echo "active";
+            } else {
+              echo "";
+            }?>"
+            >
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lamaran <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
@@ -50,8 +67,13 @@
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Notification</a></li>
-            <li><a href="<?php echo site_url("register") ?>">Daftar / Masuk</a></li>
+            <li><a href="#"><i class="fas fa-bell"></i></a></li>
+            <li class="<?php if($this->uri->segment(1)=="register") {
+              echo "active";
+            } else {
+              echo "";
+            }?>"
+            ><a href="<?php echo site_url("register") ?>">Daftar / Masuk</a></li>
             <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <span class="caret"></span></a>
               <ul class="dropdown-menu">

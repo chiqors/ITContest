@@ -10,11 +10,6 @@
           <div id="myTabContent" class="tab-content">
             <div class="tab-pane active in" id="login">
               <form action='' method="POST">
-								<label>Level User</label>
-								<select class="" name="level">
-									<option value="user">Pencari Kerja</option>
-									<option value="perusahaan">Perusahaan</option>
-								</select> <br>
                 <!-- Username -->
                 <label>Username</label>
                 <input type="text" id="username" name="username" placeholder="Username atau Email" class="form-control">
