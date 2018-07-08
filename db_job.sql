@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2018 at 04:59 AM
+-- Generation Time: Jul 08, 2018 at 04:34 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -32,6 +32,8 @@ CREATE TABLE `t_account` (
   `id_account` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `nik` int(11) NOT NULL,
   `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -44,7 +46,6 @@ CREATE TABLE `t_account` (
 CREATE TABLE `t_detail_account` (
   `id_detail_account` int(11) NOT NULL,
   `id_account` int(11) NOT NULL,
-  `nik` int(11) NOT NULL,
   `nama_lengkap` varchar(50) NOT NULL,
   `tgl_lahir` varchar(11) NOT NULL,
   `jenis_kelamin` enum('L','P') NOT NULL,
@@ -182,7 +183,8 @@ CREATE TABLE `t_request` (
 -- Indexes for table `t_account`
 --
 ALTER TABLE `t_account`
-  ADD PRIMARY KEY (`id_account`);
+  ADD PRIMARY KEY (`id_account`),
+  ADD UNIQUE KEY `uniknik` (`nik`);
 
 --
 -- Indexes for table `t_detail_account`

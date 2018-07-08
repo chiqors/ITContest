@@ -12,15 +12,15 @@
 
             <ul class="list-group">
                 <li class="list-group-item text-muted">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2014</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2018</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Last seen</strong></span> Yesterday</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> Joseph Doe</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> Chiqo Rifky S.</li>
 
             </ul>
 
             <div class="panel panel-default">
                 <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
-                <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+                <div class="panel-body"><a href=""></a></div>
             </div>
 
             <ul class="list-group">
