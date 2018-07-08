@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/css/main.css">
 
     <title>Kerja Diri</title>
   </head>
@@ -21,14 +22,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Kerja Diri</a>
+          <a class="navbar-brand" href="<?= site_url("") ?>">Kerja Diri</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Beranda <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Kerja</a></li>
+            <li class="active"><a href="<?= site_url("") ?>">Beranda <span class="sr-only">(current)</span></a></li>
+            <li><a href="<?php echo site_url("kerja") ?>">Kerja</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lamaran <span class="caret"></span></a>
               <ul class="dropdown-menu">
