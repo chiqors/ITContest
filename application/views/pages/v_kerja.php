@@ -5,7 +5,6 @@
       <div class="table-responsive">
         <table id="mytable" class="table table-bordred table-striped">
           <thead>
-            <th><input type="checkbox" id="checkall" /></th>
             <th>Nama Perusahaan</th>
             <th>Jenis Perusahaan</th>
             <th>Status Rekrut</th>
@@ -14,7 +13,6 @@
           </thead>
           <tbody>
             <tr>
-              <td><input type="checkbox" class="checkthis" /></td>
               <td>PT. Artha</td>
               <td>Informasi/Media</td>
               <td>Terbuka</td>
@@ -22,7 +20,6 @@
               <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
             </tr>
             <tr>
-              <td><input type="checkbox" class="checkthis" /></td>
               <td>PT. Artha</td>
               <td>Informasi/Media</td>
               <td>Terbuka</td>
