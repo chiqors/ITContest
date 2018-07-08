@@ -13,14 +13,14 @@
           </thead>
           <tbody>
             <tr>
-              <td>PT. Artha</td>
+              <td><a href="">PT. Artha</a></td>
               <td>Informasi/Media</td>
               <td>Terbuka</td>
               <td>Jl. Sari Gantung no. 2</td>
               <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
             </tr>
             <tr>
-              <td>PT. Artha</td>
+              <td><a href="">PT. Artha</a></td>
               <td>Informasi/Media</td>
               <td>Terbuka</td>
               <td>Jl. Sari Gantung no. 2</td>
