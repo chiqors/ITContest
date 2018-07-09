@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2018 at 04:34 PM
+-- Generation Time: Jul 09, 2018 at 04:31 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -31,11 +31,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `t_account` (
   `id_account` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `email` varchar(30) NOT NULL,
   `nik` int(11) NOT NULL,
   `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_account`
+--
+
+INSERT INTO `t_account` (`id_account`, `username`, `password`, `email`, `nik`, `level`) VALUES
+(1, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@gmail.com', 1234567890, 1),
+(2, 'hrd', '4bf31e6f4b818056eaacb83dff01c9b8', 'hrd@gmail.com', 1234567891, 2);
 
 -- --------------------------------------------------------
 
@@ -49,8 +57,17 @@ CREATE TABLE `t_detail_account` (
   `nama_lengkap` varchar(50) NOT NULL,
   `tgl_lahir` varchar(11) NOT NULL,
   `jenis_kelamin` enum('L','P') NOT NULL,
-  `alamat` text NOT NULL
+  `alamat` text NOT NULL,
+  `no_hp` int(17) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_detail_account`
+--
+
+INSERT INTO `t_detail_account` (`id_detail_account`, `id_account`, `nama_lengkap`, `tgl_lahir`, `jenis_kelamin`, `alamat`, `no_hp`) VALUES
+(2, 1, '', '', '', '', 0),
+(3, 2, '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -64,10 +81,18 @@ CREATE TABLE `t_detail_perusahaan` (
   `owner` varchar(50) NOT NULL,
   `kategori` varchar(11) NOT NULL,
   `deskripsi` text NOT NULL,
-  `alamat` int(11) NOT NULL,
-  `no_siup` int(11) NOT NULL,
+  `alamat` text NOT NULL,
+  `no_siup` int(20) NOT NULL,
   `more_info` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_detail_perusahaan`
+--
+
+INSERT INTO `t_detail_perusahaan` (`id_detail_perusahaan`, `id_perusahaan`, `owner`, `kategori`, `deskripsi`, `alamat`, `no_siup`, `more_info`) VALUES
+(1, 1, 'Dr. Brian', 'Informasi', 'Artha adalah perusahaan untuk media berita secara region maupun global', 'Jl. Teka teki no 5', 32141531, 'Terbuka'),
+(2, 2, 'Prof. Jajat Hidayat', 'Produksi', 'PT. Digital adalah perusahaan yang berfokus pada penjualan barang-barang tentang gaya hidup', 'Jl. Sasak Gantung no. 11-12', 341232344, 'Tutup');
 
 -- --------------------------------------------------------
 
@@ -158,6 +183,14 @@ CREATE TABLE `t_perusahaan` (
   `id_perusahaan` int(11) NOT NULL,
   `nama_perusahaan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_perusahaan`
+--
+
+INSERT INTO `t_perusahaan` (`id_perusahaan`, `nama_perusahaan`) VALUES
+(1, 'PT. Artha'),
+(2, 'PT. Digital');
 
 -- --------------------------------------------------------
 
@@ -267,19 +300,19 @@ ALTER TABLE `t_request`
 -- AUTO_INCREMENT for table `t_account`
 --
 ALTER TABLE `t_account`
-  MODIFY `id_account` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_account` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `t_detail_account`
 --
 ALTER TABLE `t_detail_account`
-  MODIFY `id_detail_account` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detail_account` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `t_detail_perusahaan`
 --
 ALTER TABLE `t_detail_perusahaan`
-  MODIFY `id_detail_perusahaan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detail_perusahaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `t_form`
@@ -321,7 +354,7 @@ ALTER TABLE `t_pengalaman`
 -- AUTO_INCREMENT for table `t_perusahaan`
 --
 ALTER TABLE `t_perusahaan`
-  MODIFY `id_perusahaan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_perusahaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `t_request`
