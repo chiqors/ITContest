@@ -11,11 +11,15 @@
           <div class="tab-pane active in" id="login">
             <form action='' method="POST">
               <!-- Username -->
-              <label>Username</label>
-              <input type="text" id="username" name="username" placeholder="Username atau Email" class="form-control">
+							<div class="form-group">
+              	<label>Username</label>
+              	<input type="text" id="username" name="username" placeholder="Username atau Email" class="form-control">
+							</div>
               <!-- Password-->
-              <label>Password</label>
-              <input type="password" id="password" name="password" placeholder="Passwod" class="form-control">
+							<div class="form-group">
+              	<label>Password</label>
+              	<input type="password" id="password" name="password" placeholder="Passwod" class="form-control">
+							</div>
               <!-- Button -->
               <div class=""> <button class="btn btn-success">Masuk</button> </div>
 						</form>
