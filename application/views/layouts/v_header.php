@@ -35,12 +35,21 @@
               echo "";
             }?>"
             ><a href="<?= site_url("") ?>">Beranda <span class="sr-only">(current)</span></a></li>
-            <li class="<?php if($this->uri->segment(1)=="kerja") {
+            <li class="
+            <?php if($this->uri->segment(1)=="kerja") {
               echo "active";
             } else {
               echo "";
             }?>"
-            ><a href="<?php echo site_url("kerja") ?>">Kerja</a></li>
+            ><a href="<?= site_url("kerja") ?>">Kerja</a></li>
+            <li class="
+            <?php if($this->uri->segment(1)=="lamaran") {
+              echo "active";
+            } else {
+              echo "";
+            }?>"
+            ><a href="<?= site_url("lamaran") ?>">Lamaran</a></li>
+            </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">

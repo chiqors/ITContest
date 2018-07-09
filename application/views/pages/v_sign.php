@@ -54,9 +54,6 @@
 
 		            <div class="tab-pane fade" id="perusahaan">
 		              <form id="tab">
-										<!-- Nomor SIUP -->
-										<label>No. SIUP</label>
-										<input type="number" name="no_siup" placeholder="Nomor Surat Izin Usaha" class="form-control">
 										<!-- Username -->
 										<label>Username</label>
 										<input type="number" name="username" placeholder="Username" class="form-control">
@@ -70,7 +67,7 @@
 									 	<label>Repeat Password</label>
 									 	<input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control">
 									 	<!-- Button -->
-									 	<div class=""><button class="btn btn-primary">Daftar</button></div>
+									 	<div class=""><button class="btn btn-primary"><i class="glyphicon glyphicon-arrow-right"></i> Lanjutkan</button></div>
 		              </form>
 		            </div>
 		        </div>
