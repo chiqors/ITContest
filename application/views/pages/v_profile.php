@@ -7,40 +7,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-3">
-            <!--left col-->
-
-            <ul class="list-group">
-                <li class="list-group-item text-muted">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2.13.2018</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Last seen</strong></span> Yesterday</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> Chiqo Rifky S.</li>
-
-            </ul>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
-                <div class="panel-body"><a href=""></a></div>
-            </div>
-
-            <ul class="list-group">
-                <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
-            </ul>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">Social Media</div>
-                <div class="panel-body">
-                    <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
-                </div>
-            </div>
-
-        </div>
-        <!--/col-3-->
-        <div class="col-sm-9">
+        <div class="col-sm-12">
 
             <ul class="nav nav-tabs" id="myTab">
                 <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
@@ -91,69 +58,6 @@
                                     <td>Table cell</td>
                                     <td>Table cell</td>
                                 </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
                             </tbody>
                         </table>
                         <hr>
@@ -170,9 +74,7 @@
                 </div>
                 <!--/tab-pane-->
                 <div class="tab-pane" id="messages">
-
                     <h2></h2>
-
                     <ul class="list-group">
                         <li class="list-group-item text-muted">Inbox</li>
                         <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to the latest summary report from the..</a> 2.13.2014</li>
@@ -183,37 +85,23 @@
                         <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
                         <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
                         <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-
                     </ul>
-
                 </div>
                 <!--/tab-pane-->
                 <div class="tab-pane" id="settings">
-
-                    <hr>
                     <form class="form" action="##" method="post" id="registrationForm">
                         <div class="form-group">
-
                             <div class="col-xs-6">
                                 <label for="first_name">
-                                    <h4>First name</h4></label>
+                                    <h4>Nama Lengkap</h4></label>
                                 <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
                             </div>
                         </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="last_name">
-                                    <h4>Last name</h4></label>
-                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                            </div>
-                        </div>
 
                         <div class="form-group">
-
                             <div class="col-xs-6">
                                 <label for="phone">
-                                    <h4>Phone</h4></label>
+                                    <h4>Tanggal Lahir</h4></label>
                                 <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
                             </div>
                         </div>
@@ -221,12 +109,11 @@
                         <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="mobile">
-                                    <h4>Mobile</h4></label>
+                                    <h4>No HP.</h4></label>
                                 <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
                             </div>
                         </div>
                         <div class="form-group">
-
                             <div class="col-xs-6">
                                 <label for="email">
                                     <h4>Email</h4></label>
@@ -234,7 +121,16 @@
                             </div>
                         </div>
                         <div class="form-group">
-
+                            <div class="col-xs-6">
+                                <label for="email">
+                                    <h4>Jenis Kelamin</h4></label>
+                                <select class="form-control">
+                                  <option>Laki-Laki</option>
+                                  <option>Perempuan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="email">
                                     <h4>Location</h4></label>
@@ -242,19 +138,17 @@
                             </div>
                         </div>
                         <div class="form-group">
-
                             <div class="col-xs-6">
                                 <label for="password">
                                     <h4>Password</h4></label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password" title="enter your password.">
                             </div>
                         </div>
                         <div class="form-group">
-
                             <div class="col-xs-6">
                                 <label for="password2">
                                     <h4>Verify</h4></label>
-                                <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                                <input type="password" class="form-control" name="password2" id="password2" placeholder="Verify Password" title="">
                             </div>
                         </div>
                         <div class="form-group">
