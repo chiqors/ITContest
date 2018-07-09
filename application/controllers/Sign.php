@@ -15,28 +15,27 @@
 				$data['view'] = "v_sign.php";
 				$this->load->view('index', $data);
 			}
-			function do_login() {
+			function do_sign() {
         $username = $this->input->post("username");
         $password = $this->input->post("password");
         $where = array(
             "username" => $username,
             "password" => md5($password)
         );
-        $this->load->model("sign");
-        $result = $this->login_model->read($where);
+        $this->load->model("sign_model");
+        $result = $this->sign_model->read($where);
         if(count($result) != 0) {
             $this->session->set_userdata("username",$username);
 						$this->session->set_userdata("email",$result[0]->email);
             $level = $result[0]->level;
             $this->session->set_userdata("level",$level);
-            redirect("home");
+            redirect("");
         } else {
             $this->session->set_flashdata("error", "Username atau Password Salah");
-            redirect("login");
-
+            redirect("sign");
         }
     	}
-			function logout() {
+			function signout() {
         $this->session->sess_destroy();
         redirect("");
     	}

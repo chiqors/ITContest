@@ -9,7 +9,21 @@
 
         <div id="myTabContent" class="tab-content">
           <div class="tab-pane active in" id="login">
-            <form action='' method="POST">
+						<?php
+                if(!empty($success)){
+            ?>
+            <div class="alert alert-success">
+                <?php echo $success?>
+            </div>
+            <?php } ?>
+            <?php
+                if(!empty($error)){
+            ?>
+            <div class="alert alert-danger">
+                <?php echo $error?>
+            </div>
+            <?php } ?>
+            <form action='<?= site_url("sign/do_sign")?>' method="POST">
               <!-- Username -->
 							<div class="form-group">
               	<label>Username</label>
@@ -21,7 +35,7 @@
               	<input type="password" id="password" name="password" placeholder="Password" class="form-control">
 							</div>
               <!-- Button -->
-              <div class=""> <button class="btn btn-success"><i class="fas fa-key"></i> Masuk</button> </div>
+              <div class=""> <button type="submit" class="btn btn-success"><i class="fas fa-key"></i> Masuk</button> </div>
 						</form>
 					</div>
 
