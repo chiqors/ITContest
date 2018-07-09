@@ -18,10 +18,10 @@
               <!-- Password-->
 							<div class="form-group">
               	<label>Password</label>
-              	<input type="password" id="password" name="password" placeholder="Passwod" class="form-control">
+              	<input type="password" id="password" name="password" placeholder="Password" class="form-control">
 							</div>
               <!-- Button -->
-              <div class=""> <button class="btn btn-success">Masuk</button> </div>
+              <div class=""> <button class="btn btn-success"><i class="fas fa-key"></i> Masuk</button> </div>
 						</form>
 					</div>
 
