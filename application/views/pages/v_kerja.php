@@ -7,47 +7,55 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+					<th>Nama Perusahaan</th>
+          <th>Jenis Perusahaan</th>
+          <th>Status Rekrut</th>
+          <th>Alamat</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>Mark
+          <td>PT. Artha
           	<div class="pull-right">
             	<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
     						<span class="glypicon glyphicon glyphicon-pencil"></span>
 							</button>
             </div>
           </td>
-          <td>Otto</td>
-          <td>@mdo</td>
+					<td>Informasi/Media</td>
+					<td>Terbuka</td>
+          <td>Jl. Sari Gantung no. 2</td>
+          <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
         </tr>
-        <tr>
+				<tr>
           <th scope="row">2</th>
-          <td>Jacob
-						<div class="pull-right">
+          <td>PT. Artha
+          	<div class="pull-right">
             	<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
     						<span class="glypicon glyphicon glyphicon-pencil"></span>
 							</button>
             </div>
-					</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          </td>
+					<td>Informasi/Media</td>
+					<td>Terbuka</td>
+          <td>Jl. Sari Gantung no. 2</td>
+          <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
         </tr>
-        <tr>
+				<tr>
           <th scope="row">3</th>
-          <td>Larry
-						<div class="pull-right">
-          		<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
+          <td>PT. Artha
+          	<div class="pull-right">
+            	<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
     						<span class="glypicon glyphicon glyphicon-pencil"></span>
 							</button>
             </div>
-					</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
+          </td>
+					<td>Informasi/Media</td>
+					<td>Terbuka</td>
+          <td>Jl. Sari Gantung no. 2</td>
+          <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
         </tr>
       </tbody>
     </table>
