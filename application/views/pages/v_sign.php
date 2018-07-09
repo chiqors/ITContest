@@ -24,56 +24,45 @@
           <div class="tab-pane fade" id="create">
 						<!-- Nested Tabs -->
 						<div class="well">
-		          <ul class="nav nav-tabs">
-		            <li class="active"><a href="#user" data-toggle="tab">Pencari Kerja</a></li>
-		            <li><a href="#perusahaan" data-toggle="tab">Perusahaan</a></li>
-		          </ul>
-
-		          <div id="myTabContent2" class="tab-content">
-		            <div class="tab-pane active in" id="user">
-		              <form action='' method="POST">
-										<!-- NIK -->
-										<label>NIK</label>
-										<input type="number" name="nik" placeholder="Nomor Induk Kependudukan" class="form-control">
-										<!-- Username -->
-										<label>Username</label>
-										<input type="number" name="username" placeholder="Username" class="form-control">
-	                   <!-- Email -->
-	                   <label>Email</label>
-	                   <input type="email" name="email" placeholder="Email" class="form-control">
-	                   <!-- Passwod -->
-	                   <label>Password</label>
-	                   <input type="password" id="password" name="password" placeholder="Kata Sandi" class="form-control">
-	                   <!-- RepeatPasswod -->
-	                   <label>Repeat Password</label>
-	                   <input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control">
-	                   <!-- Button -->
-	                   <div class=""><button class="btn btn-success">Daftar</button></div>
-									</form>
+            	<form action='' method="POST">
+								<!-- NIK -->
+								<div class="form-group">
+									<label>NIK</label>
+									<input type="number" name="nik" placeholder="Nomor Induk Kependudukan" class="form-control">
 								</div>
-
-		            <div class="tab-pane fade" id="perusahaan">
-		              <form id="tab">
-										<!-- Username -->
-										<label>Username</label>
-										<input type="number" name="username" placeholder="Username" class="form-control">
-									 	<!-- Email -->
-									 	<label>Email</label>
-									 	<input type="email" name="email" placeholder="Email" class="form-control">
-									 	<!-- Passwod -->
-									 	<label>Password</label>
-									 	<input type="password" id="password" name="password" placeholder="Kata Sandi" class="form-control">
-									 	<!-- RepeatPasswod -->
-									 	<label>Repeat Password</label>
-									 	<input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control">
-									 	<!-- Button -->
-									 	<div class=""><button class="btn btn-primary"><i class="glyphicon glyphicon-arrow-right"></i> Lanjutkan</button></div>
-		              </form>
-		            </div>
-		        </div>
-					</div>
-        	<!-- END of Nested Tabs -->
-          </div>
+								<!-- Username -->
+								<div class="form-group">
+									<label>Username</label>
+									<input type="number" name="username" placeholder="Username" class="form-control">
+								</div>
+                 <!-- Email -->
+								 <div class="form-group">
+                 	<label>Email</label>
+                 	<input type="email" name="email" placeholder="Email" class="form-control">
+								 </div>
+                 <!-- Passwod -->
+								 <div class="form-group">
+                 	<label>Password</label>
+                 	<input type="password" id="password" name="password" placeholder="Kata Sandi" class="form-control">
+								 </div>
+                 <!-- RepeatPasswod -->
+								 <div class="form-group">
+                 	<label>Repeat Password</label>
+                 	<input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control">
+								 </div>
+								 <h4 class="text-center">Daftar Sebagai</h4>
+						     <div class="row">
+						     	<div class="col-xs-6 col-sm-6 col-md-6">
+						       <button type="submit" name="submit" value="user" class="btn btn-primary btn-block">Pengguna</button>
+						      </div>
+						      <div class="col-xs-6 col-sm-6 col-md-6">
+						       <button type="submit" name="submit" value="hrd" class="btn btn-info btn-block">HRD / Manager</button>
+						      </div>
+						     </div>
+							</form>
+						</div>
+        		<!-- END of Nested Tabs -->
+        	</div>
         </div>
       </div>
     </div>
