@@ -56,6 +56,11 @@ class profile_model extends CI_Model {
       }
     }
 
+    function update($where, $data){
+        $this->db->where($where);
+        $this->db->update("t_detail_account",$data);
+    }
+
     function create_pendidikan($data){
   		$this->db->insert('t_kelas', $data);
   	}

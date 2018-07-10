@@ -23,6 +23,20 @@
             <div class="tab-content">
               <div class="tab-pane active" id="home">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad">
+                  <?php
+                    if(!empty($success)){
+                  ?>
+                  <div class="alert alert-success">
+                      <?php echo $success?>
+                  </div>
+                  <?php } ?>
+                  <?php
+                      if(!empty($error)){
+                  ?>
+                  <div class="alert alert-danger">
+                      <?php echo $error?>
+                  </div>
+                  <?php } ?>
                   <div class="panel panel-info">
                     <div class="panel-heading">
                       <h3 class="panel-title"><i class="fas fa-user"></i> Informasi Profil</h3>
@@ -74,7 +88,7 @@
                           <?php
                             if($this->session->userdata('username') == @$results->username) {
                           ?>
-                          <a href="<?= site_url("profile/creatependidikan") ?>" class="btn btn-warning"><i class="fas fa-plus"></i> Tambah</a>
+                          <a href="<?= site_url("profile/tambahpendidikan") ?>" class="btn btn-warning"><i class="fas fa-plus"></i> Tambah</a>
                           <?php
                             }
                           ?>
@@ -127,7 +141,7 @@
                           <?php
                             if($this->session->userdata('username') == @$results->username) {
                           ?>
-                          <a href="<?= site_url("profile/createpengalaman") ?>" class="btn btn-warning"><i class="fas fa-plus"></i> Tambah</a>
+                          <a href="<?= site_url("profile/tambahpengalaman") ?>" class="btn btn-warning"><i class="fas fa-plus"></i> Tambah</a>
                           <?php
                             }
                           ?>
@@ -194,7 +208,7 @@
                 </div>
                 <!--/tab-pane-->
                 <div class="tab-pane" id="settings">
-                  <form class="form" action="##" method="post" id="registrationForm">
+                  <form class="form" action="<?= site_url("profile/do_edit/". @$results->id_account) ?>" method="post" id="registrationForm">
                     <div class="form-group">
                       <div class="col-xs-6">
                         <label for="first_name">
@@ -206,7 +220,7 @@
                       <div class="col-xs-6">
                         <label for="phone">
                         <h4>Tanggal Lahir</h4></label>
-                        <input type="text" class="form-control" name="tanggal_lahir" id="phone" placeholder="Isi Tanggal Lahir" title="" value="<?= @$results->tanggal_lahir ?>">
+                        <input type="text" class="form-control" name="tgl_lahir" id="tgl_lahir" placeholder="Isi Tanggal Lahir" title="" value="<?= @$results->tanggal_lahir ?>">
                       </div>
                     </div>
                     <div class="form-group">
@@ -219,15 +233,8 @@
                     <div class="form-group">
                       <div class="col-xs-6">
                         <label for="email">
-                        <h4>Email</h4></label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="" value="<?= @$results->email ?>">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-xs-6">
-                        <label for="email">
                         <h4>Jenis Kelamin</h4></label>
-                        <select class="form-control" value="<?= @$results->jenis_kelamin ?>">
+                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= @$results->jenis_kelamin ?>">
                           <option value="l">Laki-Laki</option>
                           <option value="p">Perempuan</option>
                         </select>
@@ -237,29 +244,15 @@
                       <div class="col-xs-6">
                         <label for="email">
                         <h4>Alamat</h4></label>
-                        <input type="email" class="form-control" id="alamat" placeholder="Isi Alamat" title="">
+                        <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Isi Alamat" title="">
                       </div>
                     </div>
-                  <div class="form-group">
-                    <div class="col-xs-6">
-                      <label for="password">
-                      <h4>Password</h4></label>
-                      <input type="password" class="form-control" name="password" id="password" placeholder="Isi Password" title="">
-                    </div>
+                    <div class="form-group">
+                      <div class="col-xs-12">
+                        <br>
+                        <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Simpan</button>
+                      </div>
                   </div>
-                  <div class="form-group">
-                    <div class="col-xs-6">
-                      <label for="password2">
-                      <h4>Pastikan Password</h4></label>
-                      <input type="password" class="form-control" name="password2" id="password2" placeholder="Isi Ulang Password" title="">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                  <div class="col-xs-12">
-                    <br>
-                    <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Simpan</button>
-                  </div>
-                </div>
               </form>
             </div>
             <?php

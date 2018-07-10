@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2018 at 04:31 PM
+-- Generation Time: Jul 10, 2018 at 01:53 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -55,19 +55,20 @@ CREATE TABLE `t_detail_account` (
   `id_detail_account` int(11) NOT NULL,
   `id_account` int(11) NOT NULL,
   `nama_lengkap` varchar(50) NOT NULL,
-  `tgl_lahir` varchar(11) NOT NULL,
+  `tgl_lahir` date NOT NULL,
   `jenis_kelamin` enum('L','P') NOT NULL,
   `alamat` text NOT NULL,
-  `no_hp` int(17) NOT NULL
+  `no_hp` int(17) NOT NULL,
+  `show_email` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `t_detail_account`
 --
 
-INSERT INTO `t_detail_account` (`id_detail_account`, `id_account`, `nama_lengkap`, `tgl_lahir`, `jenis_kelamin`, `alamat`, `no_hp`) VALUES
-(2, 1, '', '', '', '', 0),
-(3, 2, '', '', '', '', 0);
+INSERT INTO `t_detail_account` (`id_detail_account`, `id_account`, `nama_lengkap`, `tgl_lahir`, `jenis_kelamin`, `alamat`, `no_hp`, `show_email`) VALUES
+(2, 1, 'User Anda', '1999-04-16', 'L', 'Jl. Cisarua no 5', 324234, 'y'),
+(3, 2, '', '0000-00-00', '', '', 0, 'n');
 
 -- --------------------------------------------------------
 
@@ -145,7 +146,8 @@ CREATE TABLE `t_notifikasi` (
   `id_notifikasi` int(11) NOT NULL,
   `id_account` int(11) NOT NULL,
   `id_form` int(11) NOT NULL,
-  `pesan` text NOT NULL
+  `pesan` text NOT NULL,
+  `tgl_waktu` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -170,6 +172,7 @@ CREATE TABLE `t_pengalaman` (
   `id_pengalaman` int(11) NOT NULL,
   `jangka_waktu` int(11) NOT NULL,
   `tempat_kerja` varchar(20) NOT NULL,
+  `nama_pekerjaan` varchar(50) NOT NULL,
   `id_detail_account` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -202,6 +205,7 @@ CREATE TABLE `t_request` (
   `id_request` int(11) NOT NULL,
   `id_perusahaan` int(11) NOT NULL,
   `id_account` int(11) NOT NULL,
+  `judul_request` varchar(50) NOT NULL,
   `status` enum('buka','tutup') NOT NULL,
   `syarat` text NOT NULL,
   `id_jadwal` int(11) NOT NULL,

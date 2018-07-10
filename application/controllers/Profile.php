@@ -31,7 +31,7 @@
 	      $this->load->model("profile_model");
 	      $this->profile_model->update("id_account='$id'",$post);
 	      $this->session->set_flashdata("success","Berhasil Menyunting Profil Anda");
-	      redirect("profile");
+	      redirect("profile/index/".$id);
 		  }
 
 			function tambahpendidikan(){
@@ -44,7 +44,7 @@
 	        $this->session->set_flashdata("success","Berhasil Menambahkan data pendidikan");
 	        $this->profile_model->create_pendidikan($post);
 
-	        redirect("profile");
+	       redirect("profile/index/".$id);
 	    }
 	    function editpendidikan($id){
 	        $this->load->model("profile_model");
@@ -66,7 +66,7 @@
 	        $this->load->model("profile_model");
 	        $this->profile_model->delete_pendidikan("id_pendidikan='$id'");
 	        $this->session->set_flashdata("success","Berhasil Menghapus data pendidikan");
-	        redirect("profile");
+	        redirect("profile/index/".$id);
 	    }
 
 			function tambahpengalaman(){
@@ -79,7 +79,7 @@
 	        $this->session->set_flashdata("success","Berhasil Menambahkan data pengalaman");
 	        $this->profile_model->create_pengalaman($post);
 
-	        redirect("profile");
+	        redirect("profile/index/".$id);
 	    }
 	    function editpengalaman($id){
 	        $this->load->model("profile_model");
@@ -95,13 +95,13 @@
 	        $this->load->model("profile_model");
 	        $this->profile_model->update_pengalaman("id_pengalaman='$id'",$post);
 	        $this->session->set_flashdata("success","Berhasil Menyunting data pengalaman");
-	        redirect("profile");
+	        redirect("profile/index/".$id);
 	    }
 	    function deletepengalaman($id){
 	        $this->load->model("profile_model");
 	        $this->profile_model->delete_pengalaman("id_pengalaman='$id'");
 	        $this->session->set_flashdata("success","Berhasil Menghapus data pengalaman");
-	        redirect("profile");
+	        redirect("profile/index/".$id);
 	    }
 	}
 ?>
