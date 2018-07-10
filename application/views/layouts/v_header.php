@@ -69,7 +69,7 @@
             }?>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $this->session->userdata('username') ?> <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="<?= site_url('profile')?>">Lihat</a></li>
+                <li><a href="<?= site_url('profile/index/'.$this->session->userdata('id_account'))?>">Lihat</a></li>
                 <li><a href="<?= site_url('sign/signout')?>">Keluar</a></li>
               </ul>
             </li>

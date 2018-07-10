@@ -7,6 +7,7 @@
 				$username = $this->session->userdata('username');
 				$email = $this->session->userdata('email');
 				$level = $this->session->userdata('level');
+				if(!empty($username)) redirect("");
 			}
 			public function index() {
 				$data['success'] = $this->session->flashdata("success");
@@ -25,6 +26,7 @@
         $this->load->model("sign_model");
         $result = $this->sign_model->read($where);
         if(count($result) != 0) {
+						$this->session->set_userdata("id_account",$result[0]->id_account);
             $this->session->set_userdata("username",$username);
 						$this->session->set_userdata("email",$result[0]->email);
             $level = $result[0]->level;
