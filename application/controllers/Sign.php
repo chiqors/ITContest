@@ -32,6 +32,7 @@
     	}
 			function signout() {
         $this->session->sess_destroy();
+        redirect("");
     	}
 	}
 ?>

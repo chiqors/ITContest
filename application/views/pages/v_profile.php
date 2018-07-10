@@ -224,14 +224,14 @@
                       <div class="col-xs-6">
                         <label for="phone">
                         <h4>Tanggal Lahir</h4></label>
-                        <input type="text" class="form-control" name="tgl_lahir" id="tgl_lahir" placeholder="Isi Tanggal Lahir" title="" value="<?= @$results->tanggal_lahir ?>">
+                        <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir" placeholder="Isi Tanggal Lahir" title="" value="<?= @$results->tanggal_lahir ?>">
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-xs-6">
                         <label for="mobile">
                         <h4>No HP.</h4></label>
-                        <input type="text" class="form-control" name="no_hp" id="no_hp" placeholder="Isi No. Handphone" title="" <?= @$results->no_hp ?>>
+                        <input type="text" class="form-control" name="no_hp" id="no_hp" placeholder="Isi No. Handphone" title="" value="<?= @$results->no_hp ?>">
                       </div>
                     </div>
                     <div class="form-group">
@@ -248,14 +248,14 @@
                       <div class="col-xs-6">
                         <label for="email">
                         <h4>Alamat</h4></label>
-                        <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Isi Alamat" title="">
+                        <textarea class="form-control" id="alamat" name="alamat" placeholder="Isi Alamat" title=""><?= @$results->alamat ?></textarea>
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-xs-6">
                         <label for="email">
                         <h4>Tampil Email</h4></label>
-                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= @$results->show_email ?>">
+                        <select id="show_email" name="show_email" class="form-control" value="<?= @$results->show_email ?>">
                           <option value="y">Ya</option>
                           <option value="n">Tidak</option>
                         </select>
