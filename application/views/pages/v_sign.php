@@ -51,7 +51,7 @@
 								<!-- Username -->
 								<div class="form-group">
 									<label>Username</label>
-									<input type="number" name="username" placeholder="Username" class="form-control">
+									<input type="text" name="username" placeholder="Username" class="form-control">
 								</div>
                  <!-- Email -->
 								 <div class="form-group">
@@ -71,10 +71,10 @@
 								 <h4 class="text-center">Daftar Sebagai</h4>
 						     <div class="row">
 						     	<div class="col-xs-6 col-sm-6 col-md-6">
-						       <button type="submit" name="submit" value="user" class="btn btn-primary btn-block">Pengguna</button>
+						       <button type="submit" value="user" class="btn btn-primary btn-block">Pengguna</button>
 						      </div>
 						      <div class="col-xs-6 col-sm-6 col-md-6">
-						       <button type="submit" name="submit" value="hrd" class="btn btn-info btn-block">HRD / Manager</button>
+						       <button type="submit" value="hrd" class="btn btn-info btn-block">HRD / Manager</button>
 						      </div>
 						     </div>
 							</form>
