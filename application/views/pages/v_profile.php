@@ -52,7 +52,7 @@
                               </tr>
                               <tr>
                                 <td>Tanggal Lahir:</td>
-                                <td><?= @$results->tanggal_lahir ?></td>
+                                <td><?= @$results->tgl_lahir ?></td>
                               </tr>
                               <tr>
                                 <td>Jenis Kelamin</td>
@@ -64,7 +64,7 @@
                               </tr>
                               <tr>
                                 <td>Alamat</td>
-                                <td><?= @$results->Alamat ?></td>
+                                <td><?= @$results->alamat ?></td>
                               </tr>
                               <tr>
                                 <td>Email</td>
