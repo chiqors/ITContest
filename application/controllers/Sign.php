@@ -2,13 +2,6 @@
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
 	class Sign extends CI_Controller {
-			function __construct() {
-				parent::__construct();
-				$username = $this->session->userdata('username');
-				$email = $this->session->userdata('email');
-				$level = $this->session->userdata('level');
-				if(!empty($username)) redirect("");
-			}
 			public function index() {
 				$data['success'] = $this->session->flashdata("success");
         $data['error'] = $this->session->flashdata("error");
@@ -39,7 +32,6 @@
     	}
 			function signout() {
         $this->session->sess_destroy();
-        redirect("");
     	}
 	}
 ?>

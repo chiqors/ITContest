@@ -66,10 +66,14 @@
                                 <td>Alamat</td>
                                 <td><?= @$results->alamat ?></td>
                               </tr>
+                              <?php if(@$results->show_email == 'y') { ?>
                               <tr>
                                 <td>Email</td>
                                 <td><a href="mailto:<?= @$results->email ?>"><?= @$results->email ?></a></td>
                               </tr>
+                              <?php
+                                }
+                              ?>
                             </tbody>
                           </table>
                           <a href="#" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Pendidikan</a>
@@ -245,6 +249,16 @@
                         <label for="email">
                         <h4>Alamat</h4></label>
                         <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Isi Alamat" title="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-xs-6">
+                        <label for="email">
+                        <h4>Tampil Email</h4></label>
+                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= @$results->show_email ?>">
+                          <option value="y">Ya</option>
+                          <option value="n">Tidak</option>
+                        </select>
                       </div>
                     </div>
                     <div class="form-group">
