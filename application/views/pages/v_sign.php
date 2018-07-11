@@ -67,7 +67,7 @@
 								 <div class="form-group">
                  	<label>Ulangi Kata Sandi</label>
                  	<!-- <input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control"> -->
-									<input type="password" id="confirm_password" placeholder="Ulangi Kata Sandi" minlength="5" maxlength="50" class="form-control" required>
+									<!-- <input type="password" id="confirm_password" placeholder="Ulangi Kata Sandi" minlength="5" maxlength="50" class="form-control" required> -->
 								 </div>
 								 <h4 class="text-center">Daftar Sebagai</h4>
 						     <div class="row">
