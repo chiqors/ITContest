@@ -34,5 +34,20 @@
         $this->session->sess_destroy();
         redirect("");
     	}
+
+			/**
+			 * UNTUK REGISTER AKUN USER dan PERUSAHAAN
+			 */
+
+			function do_insert() {
+				$post = $this->input->post(NULL, TRUE);
+				$this->load->model("sign_model");
+				$this->session->set_flashdata("success","Berhasil Membuat Akun");
+				$this->sign_model->create($post);
+
+				redirect("sign");
+			}
+
 	}
+
 ?>

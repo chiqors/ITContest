@@ -42,39 +42,40 @@
           <div class="tab-pane fade" id="create">
 						<!-- Nested Tabs -->
 						<div class="well">
-            	<form action='' method="POST">
+            	<form action='<?= site_url("sign/do_insert") ?>' method="POST">
 								<!-- NIK -->
 								<div class="form-group">
 									<label>NIK</label>
-									<input type="number" name="nik" placeholder="Nomor Induk Kependudukan" class="form-control">
+									<input type="text" name="nik" placeholder="Nomor Induk Kependudukan" minlength="1" maxlength="11" class="form-control" required>
 								</div>
 								<!-- Username -->
 								<div class="form-group">
 									<label>Username</label>
-									<input type="text" name="username" placeholder="Username" class="form-control">
+									<input type="text" name="username" placeholder="Username" minlength="5" maxlength="30" class="form-control" required>
 								</div>
                  <!-- Email -->
 								 <div class="form-group">
                  	<label>Email</label>
-                 	<input type="email" name="email" placeholder="Email" class="form-control">
+                 	<input type="email" name="email" placeholder="Email" minlength="5" maxlength="30" class="form-control" required>
 								 </div>
                  <!-- Passwod -->
 								 <div class="form-group">
-                 	<label>Password</label>
-                 	<input type="password" id="password" name="password" placeholder="Kata Sandi" class="form-control">
+                 	<label>Kata Sandi</label>
+                 	<input type="password" id="password" name="password" placeholder="Kata Sandi" minlength="5" maxlength="50" class="form-control" required>
 								 </div>
                  <!-- RepeatPasswod -->
 								 <div class="form-group">
-                 	<label>Repeat Password</label>
-                 	<input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control">
+                 	<label>Ulangi Kata Sandi</label>
+                 	<!-- <input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control"> -->
+									<input type="password" id="confirm_password" placeholder="Ulangi Kata Sandi" minlength="5" maxlength="50" class="form-control" required>
 								 </div>
 								 <h4 class="text-center">Daftar Sebagai</h4>
 						     <div class="row">
 						     	<div class="col-xs-6 col-sm-6 col-md-6">
-						       <button type="submit" value="user" class="btn btn-primary btn-block">Pengguna</button>
+						       <button type="submit" name="level" value="1" class="btn btn-primary btn-block">Pengguna</button>
 						      </div>
 						      <div class="col-xs-6 col-sm-6 col-md-6">
-						       <button type="submit" value="hrd" class="btn btn-info btn-block">HRD / Manager</button>
+						       <button type="submit" name="level" value="2" class="btn btn-info btn-block">HRD / Manager</button>
 						      </div>
 						     </div>
 							</form>
