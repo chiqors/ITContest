@@ -11,52 +11,25 @@
           <th>Jenis Perusahaan</th>
           <th>Status Rekrut</th>
           <th>Alamat</th>
-          <th>Aksi</th>
+					<th>Aksi</th>
         </tr>
       </thead>
       <tbody>
+				<?php
+						$i = 1;
+						foreach($result as $row){
+				?>
         <tr>
-          <th scope="row">1</th>
-          <td>PT. Artha
-          	<div class="pull-right">
-            	<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
-    						<span class="glypicon glyphicon glyphicon-pencil"></span>
-							</button>
-            </div>
-          </td>
-					<td>Informasi/Media</td>
-					<td>Terbuka</td>
-          <td>Jl. Sari Gantung no. 2</td>
-          <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
+          <th scope="row"><?= $i++ ?></th>
+          <td><?= $row->nama_perusahaan ?></td>
+					<td><?= $row->kategori ?></td>
+					<td><?= $row->status ?></td>
+          <td><?= $row->alamat ?></td>
+					<td><a href="<?= site_url("kerja/view/".$row->id_perusahaan) ?>" class="btn btn-xs btn-primary">Lihat</a></td>
         </tr>
-				<tr>
-          <th scope="row">2</th>
-          <td>PT. Artha
-          	<div class="pull-right">
-            	<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
-    						<span class="glypicon glyphicon glyphicon-pencil"></span>
-							</button>
-            </div>
-          </td>
-					<td>Informasi/Media</td>
-					<td>Terbuka</td>
-          <td>Jl. Sari Gantung no. 2</td>
-          <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
-        </tr>
-				<tr>
-          <th scope="row">3</th>
-          <td>PT. Artha
-          	<div class="pull-right">
-            	<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
-    						<span class="glypicon glyphicon glyphicon-pencil"></span>
-							</button>
-            </div>
-          </td>
-					<td>Informasi/Media</td>
-					<td>Terbuka</td>
-          <td>Jl. Sari Gantung no. 2</td>
-          <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
-        </tr>
+				<?php
+					}
+				?>
       </tbody>
     </table>
     </div>

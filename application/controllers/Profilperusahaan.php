@@ -6,6 +6,8 @@
 			{
         $this->load->model("Profilperusahaan_model");
         $result = $this->Profilperusahaan_model->read($this->session->userdata('id_account'));
+				$result_pemilik = $this->Profilperusahaan_model->pemilikperusahaan($this->session->userdata('id_account'));
+				$data['result_pemilik'] = $result_pemilik;
 
         $data['result'] = $result[0];
         if (empty($result)) {

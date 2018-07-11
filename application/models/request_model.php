@@ -17,6 +17,18 @@ class Request_model extends CI_Model {
             return array();
         }
     }
+    function pemilikperusahaan($id=''){
+        $this->db->select('*');
+        $this->db->from('t_perusahaan, t_detail_perusahaan');
+        $this->db->where('t_perusahaan.id_perusahaan = t_detail_perusahaan.id_perusahaan');
+        $this->db->where('t_perusahaan.id_account = ' . $id);
+        $query = $this->db->get();
+        if($query and $query->num_rows() != 0){
+            return $query->result();
+        }else{
+            return array();
+        }
+    }
     function read($where="", $order=""){
         if(!empty($where)) $this->db->where($where);
         if(!empty($order)) $this->db->where($order);

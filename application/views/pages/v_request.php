@@ -2,9 +2,13 @@
   <h2>Request / Permintaan</h2>
     <div id="daftar" class="tab-pane fade in active">
       Di bawah ini berisi semua daftar request kerja yang Anda ajukan
+      <?php
+        if(!empty($result_pemilik)) {
+      ?>
       <a href="<?= site_url("request/tambah/".$result_id_per->id_perusahaan) ?>" class="btn btn-primary">
       <i class="fa fa-plus"></i> Tambah
       </a>
+      <?php } ?>
       <?php
           if(!empty($success)){
       ?>
@@ -37,12 +41,24 @@
             <td><?= $row->status ?></td>
             <td><?= $row->tgl_publish ?></td>
             <td>
+              <?php
+                if(empty($result_pemilik)) {
+              ?>
+              <a class="btn btn-warning" href="<?= site_url("request/isiform/".$row->id_request."?id_per=".$result_id_per->id_perusahaan) ?>">
+                  <i class="fas fa-pencil"></i> Isi Form
+              </a>
+              <?php
+                } else {
+              ?>
               <a class="btn btn-warning" href="<?= site_url("request/edit/".$row->id_request."?id_per=".$result_id_per->id_perusahaan) ?>">
                   <i class="fas fa-pencil"></i> Edit
               </a>
               <a class="btn btn-danger" href="<?= site_url("request/delete/".$row->id_request."?id_per=".$result_id_per->id_perusahaan) ?>">
                   <i class="fas fa-trash-o"></i> Delete
               </a>
+              <?php
+                }
+              ?>
             </td>
           </tr>
           <?php
