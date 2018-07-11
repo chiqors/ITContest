@@ -1,18 +1,28 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
+    <title>Kerja Diri</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?= base_url() ?>/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/assets/css/main.css">
+    <!-- Additions -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/bootstrap/css/animate.css">
+  	<link rel="stylesheet" href="<?= base_url() ?>assets/bootstrap/css/icomoon.css">
+  	<link rel="stylesheet" href="<?= base_url() ?>assets/bootstrap/css/themify-icons.css">
+    <!-- <link href="<?= base_url() ?>assets/bootstrap/css/bootstrap.css" rel="stylesheet" /> -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  	<link rel="stylesheet" href="<?= base_url() ?>assets/bootstrap/css/magnific-popup.css">
+  	<link rel="stylesheet" href="<?= base_url() ?>assets/bootstrap/css/chocolat.css">
+  	<link rel="stylesheet" href="<?= base_url() ?>assets/bootstrap/css/style.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/main.css">
 
-    <title>Kerja Diri</title>
+  	<script src="assets/js/modernizr-2.6.2.min.js"></script>
+
+
   </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" id="view_header">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -91,7 +101,7 @@
             } else {
               echo "";
             }?>"
-            ><a href="<?php echo site_url("sign") ?>">Daftar / Masuk</a></li>
+            ><a href="<?php echo site_url("sign") ?>">Daftar / Masuk </a></li>
             <?php
               }
             ?>
