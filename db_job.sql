@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2018 at 12:56 AM
+-- Generation Time: Jul 12, 2018 at 01:08 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -134,18 +134,6 @@ CREATE TABLE `t_jadwal` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_lulusan`
---
-
-CREATE TABLE `t_lulusan` (
-  `id_lulusan` int(11) NOT NULL,
-  `id_pendidikan` int(11) NOT NULL,
-  `nama_lulusan` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `t_notifikasi`
 --
 
@@ -173,8 +161,16 @@ INSERT INTO `t_notifikasi` (`id_notifikasi`, `id_account`, `id_form`, `pesan`, `
 CREATE TABLE `t_pendidikan` (
   `id_pendidikan` int(11) NOT NULL,
   `id_detail_account` int(11) NOT NULL,
-  `nama_jenjang` varchar(11) NOT NULL
+  `nama_jenjang` varchar(11) NOT NULL,
+  `nama_lulusan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_pendidikan`
+--
+
+INSERT INTO `t_pendidikan` (`id_pendidikan`, `id_detail_account`, `nama_jenjang`, `nama_lulusan`) VALUES
+(1, 2, 'Kuliah', 'S1 Komputer');
 
 -- --------------------------------------------------------
 
@@ -281,13 +277,6 @@ ALTER TABLE `t_jadwal`
   ADD PRIMARY KEY (`id_jadwal`);
 
 --
--- Indexes for table `t_lulusan`
---
-ALTER TABLE `t_lulusan`
-  ADD PRIMARY KEY (`id_lulusan`),
-  ADD KEY `jenjang_id_pendidikan_t_pendidikan_fk` (`id_pendidikan`);
-
---
 -- Indexes for table `t_notifikasi`
 --
 ALTER TABLE `t_notifikasi`
@@ -357,12 +346,6 @@ ALTER TABLE `t_jadwal`
   MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `t_lulusan`
---
-ALTER TABLE `t_lulusan`
-  MODIFY `id_lulusan` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `t_notifikasi`
 --
 ALTER TABLE `t_notifikasi`
@@ -372,7 +355,7 @@ ALTER TABLE `t_notifikasi`
 -- AUTO_INCREMENT for table `t_pendidikan`
 --
 ALTER TABLE `t_pendidikan`
-  MODIFY `id_pendidikan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pendidikan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `t_pengalaman`
@@ -415,12 +398,6 @@ ALTER TABLE `t_form`
   ADD CONSTRAINT `dari_id_perusahaan_t_perusahaan_fk` FOREIGN KEY (`id_perusahaan`) REFERENCES `t_perusahaan` (`id_perusahaan`),
   ADD CONSTRAINT `pengisi_id_account_t_account_fk` FOREIGN KEY (`id_account`) REFERENCES `t_account` (`id_account`),
   ADD CONSTRAINT `permintaan_id_request_t_request_fk` FOREIGN KEY (`id_request`) REFERENCES `t_request` (`id_request`);
-
---
--- Constraints for table `t_lulusan`
---
-ALTER TABLE `t_lulusan`
-  ADD CONSTRAINT `jenjang_id_pendidikan_t_pendidikan_fk` FOREIGN KEY (`id_pendidikan`) REFERENCES `t_pendidikan` (`id_pendidikan`);
 
 --
 -- Constraints for table `t_notifikasi`

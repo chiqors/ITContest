@@ -35,6 +35,9 @@
 		  }
 
 			function tambahpendidikan(){
+				$this->load->model("profile_model");
+				$id_detail_result = $this->profile_model->read_iddetail($this->session->userdata('id_account'));
+				$data['id_det'] = $id_detail_result[0];
         $data['view'] = "forms/v_form_pendidikan";
         $this->load->view('index', $data);
 	    }
@@ -49,6 +52,8 @@
 	    function editpendidikan($id){
 	        $this->load->model("profile_model");
 	        $result = $this->profile_model->read_pendidikan("id_pendidikan = '$id'");
+					$id_detail_result = $this->profile_model->read_iddetail($this->session->userdata('id_account'));
+					$data['id_det'] = $id_detail_result[0];
 
 	        $data['result'] = $result[0];
 	        $data['form_edit'] = TRUE;
