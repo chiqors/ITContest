@@ -6,6 +6,8 @@
 			{
 				$this->load->model("request_model");
 				$result_id_per = $this->request_model->read_pemilik("id_perusahaan = '$id'");
+				$result_pemilik = $this->request_model->pemilikperusahaan($this->session->userdata('id_account'));
+				$data['result_pemilik'] = $result_pemilik;
 				$data['result_id_per'] = $result_id_per[0];
 				$data['result'] = $this->request_model->read();
 				$data['view'] = "v_request";
@@ -56,6 +58,22 @@
 	        $this->request_model->delete("id_request='$id'");
 	        $this->session->set_flashdata("success","Berhasil Menghapus data request");
 	        redirect("request/index/".$perusahaan_id);
+	    }
+			function view($id){
+	        $this->load->model("request_model");
+					$perusahaan_id = $this->input->get('id_per');
+	        $result = $this->request_model->read("id_request = '$id'");
+
+					$data['view'] = "forms/v_form_request";
+	        $this->load->view("index",$data);
+	    }
+			function fillform($id){
+	        $this->load->model("request_model");
+					$perusahaan_id = $this->input->get('id_per');
+	        $result = $this->request_model->read("id_request = '$id'");
+
+					$data['view'] = "forms/v_form_request";
+	        $this->load->view("index",$data);
 	    }
 	}
 ?>

@@ -36,8 +36,14 @@
                     <div class="panel-body">
                       <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12">
+                          <?php
+                            if(!empty($result_pemilik)) {
+                          ?>
                           <a href="<?= site_url("profilperusahaan/edit/".$result->id_perusahaan) ?>" class="btn btn-warning">Update Info</a>
                           <a href="<?= site_url("profilperusahaan/delete/".$result->id_perusahaan) ?>" class="btn btn-danger">Hapus Info</a>
+                          <?php
+                            }
+                          ?>
                           <table class="table table-user-information">
                             <tbody>
                               <tr>
@@ -62,7 +68,17 @@
                               </tr>
                             </tbody>
                           </table>
+                          <?php
+                            if(!empty($result_pemilik)) {
+                          ?>
                           <a href="<?= site_url("request/index/".@$result->id_perusahaan) ?>" class="btn btn-primary">Lihat Request</a>
+                          <?php
+                            } else {
+                          ?>
+                          <a href="<?= site_url("request/index/".@$result->id_perusahaan) ?>" class="btn btn-primary">Lamar Kerja</a>
+                          <?php
+                            }
+                          ?>
                         </div>
                       </div>
                     </div>
