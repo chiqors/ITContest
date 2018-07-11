@@ -79,7 +79,7 @@ class Request_model extends CI_Model {
         }
     }
     function readform($id=''){
-        $this->db->select('*');
+        $this->db->select('t_form.id_account, t_account.username, t_detail_account.nama_lengkap, t_form.isi_form, t_form.isi_form, t_form.id_form, t_form.status_terima');
         $this->db->from('t_account, t_detail_account, t_form, t_request');
         $this->db->where('t_account.id_account = t_detail_account.id_account');
         $this->db->where('t_form.id_account = t_account.id_account');

@@ -42,7 +42,7 @@
                             <tbody>
                               <tr>
                                 <td>Username</td>
-                                <td><?= @$result_form->username ?></td>
+                                <td><a href="<?= site_url("profile/index/".$result_form->id_account) ?>"><?= @$result_form->username ?></a></td>
                               </tr>
                               <tr>
                                 <td>Nama Lengkap</td>
