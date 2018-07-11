@@ -42,6 +42,7 @@
               echo "";
             }?>"
             ><a href="<?= site_url("kerja") ?>">Kerja</a></li>
+            <?php if($this->session->userdata('level') != 2) { ?>
             <li class="
             <?php if($this->uri->segment(1)=="lamaran") {
               echo "active";
@@ -49,6 +50,15 @@
               echo "";
             }?>"
             ><a href="<?= site_url("lamaran") ?>">Lamaran</a></li>
+            <?php } else { ?>
+            <li class="
+            <?php if($this->uri->segment(1)=="profilperusahaan") {
+              echo "active";
+            } else {
+              echo "";
+            }?>"
+            ><a href="<?= site_url("profilperusahaan") ?>">Profil Perusahaan</a></li>
+            <?php } ?>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
