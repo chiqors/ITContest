@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2018 at 01:53 PM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Generation Time: Jul 11, 2018 at 06:54 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,7 +33,7 @@ CREATE TABLE `t_account` (
   `username` varchar(20) NOT NULL,
   `password` varchar(50) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `nik` int(11) NOT NULL,
+  `nik` varchar(20) NOT NULL,
   `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,8 +42,8 @@ CREATE TABLE `t_account` (
 --
 
 INSERT INTO `t_account` (`id_account`, `username`, `password`, `email`, `nik`, `level`) VALUES
-(1, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@gmail.com', 1234567890, 1),
-(2, 'hrd', '4bf31e6f4b818056eaacb83dff01c9b8', 'hrd@gmail.com', 1234567891, 2);
+(1, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@gmail.com', '1234567890', 1),
+(2, 'hrd', '4bf31e6f4b818056eaacb83dff01c9b8', 'hrd@gmail.com', '1234567891', 2);
 
 -- --------------------------------------------------------
 
