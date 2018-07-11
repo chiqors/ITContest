@@ -27,12 +27,12 @@
               <!-- Username -->
 							<div class="form-group">
               	<label>Username</label>
-              	<input type="text" id="username" name="username" placeholder="Username atau Email" class="form-control">
+              	<input type="text" name="username" placeholder="Username atau Email" class="form-control">
 							</div>
               <!-- Password-->
 							<div class="form-group">
               	<label>Password</label>
-              	<input type="password" id="password" name="password" placeholder="Password" class="form-control">
+              	<input type="password" name="password" placeholder="Password" class="form-control">
 							</div>
               <!-- Button -->
               <div class=""> <button type="submit" class="btn btn-success"><i class="fas fa-key"></i> Masuk</button> </div>
@@ -46,7 +46,7 @@
 								<!-- NIK -->
 								<div class="form-group">
 									<label>NIK</label>
-									<input type="text" name="nik" placeholder="Nomor Induk Kependudukan" minlength="1" maxlength="11" class="form-control" required>
+									<input type="text" name="nik" id="nik" placeholder="Nomor Induk Kependudukan" minlength="1" maxlength="20" class="form-control" required>
 								</div>
 								<!-- Username -->
 								<div class="form-group">
@@ -66,8 +66,7 @@
                  <!-- RepeatPasswod -->
 								 <div class="form-group">
                  	<label>Ulangi Kata Sandi</label>
-                 	<!-- <input type="password" id="password" name="password" placeholder="Ulangi Kata Sandi" class="form-control"> -->
-									<!-- <input type="password" id="confirm_password" placeholder="Ulangi Kata Sandi" minlength="5" maxlength="50" class="form-control" required> -->
+									<input type="password" id="confirm_password" placeholder="Ulangi Kata Sandi" minlength="5" maxlength="50" class="form-control" required>
 								 </div>
 								 <h4 class="text-center">Daftar Sebagai</h4>
 						     <div class="row">
