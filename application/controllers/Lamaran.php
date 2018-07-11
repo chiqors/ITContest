@@ -4,6 +4,8 @@
 	class Lamaran extends CI_Controller {
 			public function index()
 			{
+				$this->load->model("lamaran_model");
+        $data['result'] = $this->lamaran_model->read();
 				$data['view'] = "v_lamaran";
 				$this->load->view('index', $data);
 			}

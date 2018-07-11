@@ -48,4 +48,70 @@ class Request_model extends CI_Model {
         $this->db->where($where);
         $this->db->delete("t_request");
     }
+    function createform($data)
+    {
+    	$this->db->insert('t_form', $data);
+    }
+    function readrequest($id=''){
+        $this->db->select('*');
+        $this->db->from('t_request, t_form');
+        $this->db->where('t_form.id_request = t_request.id_request');
+        $this->db->where('t_form.id_form = ' . $id);
+        $query = $this->db->get();
+        if($query and $query->num_rows() != 0){
+            return $query->result();
+        }else{
+            return array();
+        }
+    }
+    function readviewlist($id=''){
+        $this->db->select('*');
+        $this->db->from('t_account, t_detail_account, t_form, t_request');
+        $this->db->where('t_account.id_account = t_detail_account.id_account');
+        $this->db->where('t_form.id_account = t_account.id_account');
+        $this->db->where('t_form.id_request = t_request.id_request');
+        $this->db->where('t_form.id_request = ' . $id);
+        $query = $this->db->get();
+        if($query and $query->num_rows() != 0){
+            return $query->result();
+        }else{
+            return array();
+        }
+    }
+    function readform($id=''){
+        $this->db->select('*');
+        $this->db->from('t_account, t_detail_account, t_form, t_request');
+        $this->db->where('t_account.id_account = t_detail_account.id_account');
+        $this->db->where('t_form.id_account = t_account.id_account');
+        $this->db->where('t_form.id_request = t_request.id_request');
+        $this->db->where('t_form.id_form = ' . $id);
+        $query = $this->db->get();
+        if($query and $query->num_rows() != 0){
+            return $query->result();
+        }else{
+            return array();
+        }
+    }
+    function read_id_acc_form($id=''){
+        $this->db->select('t_form.id_account');
+        $this->db->from('t_account, t_detail_account, t_form, t_request');
+        $this->db->where('t_account.id_account = t_detail_account.id_account');
+        $this->db->where('t_form.id_account = t_account.id_account');
+        $this->db->where('t_form.id_request = t_request.id_request');
+        $this->db->where('t_form.id_form = ' . $id);
+        $query = $this->db->get();
+        if($query and $query->num_rows() != 0){
+            return $query->result();
+        }else{
+            return array();
+        }
+    }
+    function update_status($where, $data){
+        $this->db->where($where);
+        $this->db->update("t_form",$data);
+    }
+    function create_message($data)
+    {
+    	$this->db->insert('t_notifikasi', $data);
+    }
 }

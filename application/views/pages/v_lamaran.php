@@ -22,32 +22,20 @@
           </tr>
         </thead>
         <tbody>
+          <?php
+              foreach($result as $row){
+          ?>
           <tr>
-            <td>PT.Bank BNI Indonesia</td>
-            <td>Customer Service</td>
-            <td>2017-09-09</td>
+            <td><?= $row->nama_perusahaan ?></td>
+            <td><?= $row->judul_request ?></td>
+            <td><?= $row->tgl_waktu ?></td>
             <td>
-              <span class="label label-default">Telah Dikirim</span>
+              <span class="label label-default"><?= $row->status_terima ?></span>
             </td>
           </tr>
-          <tr>
-            <td>CV.Togamas Supratman </td>
-            <td>Kasir</td>
-            <td>2018-01-02</td>
-            <td> <span class="label label-primary">Menunggu Konfirmasi</span> </td>
-          </tr>
-          <tr>
-            <td>PT.Walden Global Internasional</td>
-            <td>Programmer Back End</td>
-            <td>2018-01-02</td>
-            <td> <span class="label label-success">Diterima</span> </td>
-          </tr>
-          <tr>
-            <td>PT.Bukalapak</td>
-            <td>Pengganti CEO BUkalapak</td>
-            <td>2018-07-02</td>
-            <td> <span class="label label-danger">Ditolak</span> </td>
-          </tr>
+          <?php
+              }
+          ?>
         </tbody>
       </table>
     </div>

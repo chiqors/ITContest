@@ -44,16 +44,25 @@
               <?php
                 if(empty($result_pemilik)) {
               ?>
+              <?php
+                if($row->status == "buka") {
+              ?>
               <a class="btn btn-warning" href="<?= site_url("request/isiform/".$row->id_request."?id_per=".$result_id_per->id_perusahaan) ?>">
                   <i class="fas fa-pencil"></i> Isi Form
               </a>
               <?php
+                }
+              ?>
+              <?php
                 } else {
               ?>
-              <a class="btn btn-warning" href="<?= site_url("request/edit/".$row->id_request."?id_per=".$result_id_per->id_perusahaan) ?>">
+              <a class="btn btn-sm btn-info" href="<?= site_url("request/visitform/".$row->id_request."?id_per=".$result_id_per->id_perusahaan) ?>">
+                  <i class="fas fa-pencil"></i> Kunjungi Form
+              </a>
+              <a class="btn btn-sm btn-warning" href="<?= site_url("request/edit/".$row->id_request."?id_per=".$result_id_per->id_perusahaan) ?>">
                   <i class="fas fa-pencil"></i> Edit
               </a>
-              <a class="btn btn-danger" href="<?= site_url("request/delete/".$row->id_request."?id_per=".$result_id_per->id_perusahaan) ?>">
+              <a class="btn btn-sm btn-danger" href="<?= site_url("request/delete/".$row->id_request."?id_per=".$result_id_per->id_perusahaan) ?>">
                   <i class="fas fa-trash-o"></i> Delete
               </a>
               <?php
