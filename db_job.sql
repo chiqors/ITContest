@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2018 at 01:08 AM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Generation Time: Jul 11, 2018 at 06:54 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -67,8 +67,8 @@ CREATE TABLE `t_detail_account` (
 --
 
 INSERT INTO `t_detail_account` (`id_detail_account`, `id_account`, `nama_lengkap`, `tgl_lahir`, `jenis_kelamin`, `alamat`, `no_hp`, `show_email`) VALUES
-(2, 1, 'User Anda', '1999-04-16', 'L', 'Jl. Cisaru23', 32234, 'y'),
-(3, 2, 'hrd Anda', '2018-07-10', 'L', 'dfgsdas', 45343, 'y');
+(2, 1, 'User Anda', '1999-04-16', 'L', 'Jl. Cisarua no 5', 324234, 'y'),
+(3, 2, '', '0000-00-00', '', '', 0, 'n');
 
 -- --------------------------------------------------------
 
@@ -92,7 +92,8 @@ CREATE TABLE `t_detail_perusahaan` (
 --
 
 INSERT INTO `t_detail_perusahaan` (`id_detail_perusahaan`, `id_perusahaan`, `owner`, `kategori`, `deskripsi`, `alamat`, `no_siup`, `more_info`) VALUES
-(5, 7, 'Dr. Brian', 'Informasi', 'fgdg', 'asdfasf', 1233214, '');
+(1, 1, 'Dr. Brian', 'Informasi', 'Artha adalah perusahaan untuk media berita secara region maupun global', 'Jl. Teka teki no 5', 32141531, 'Terbuka'),
+(2, 2, 'Prof. Jajat Hidayat', 'Produksi', 'PT. Digital adalah perusahaan yang berfokus pada penjualan barang-barang tentang gaya hidup', 'Jl. Sasak Gantung no. 11-12', 341232344, 'Tutup');
 
 -- --------------------------------------------------------
 
@@ -105,16 +106,9 @@ CREATE TABLE `t_form` (
   `id_perusahaan` int(11) NOT NULL,
   `id_account` int(11) NOT NULL,
   `id_request` int(11) NOT NULL,
-  `status_terima` enum('tunggu','terima','tolak') NOT NULL,
+  `status_terima` enum('terima','tolak') NOT NULL,
   `isi_form` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `t_form`
---
-
-INSERT INTO `t_form` (`id_form`, `id_perusahaan`, `id_account`, `id_request`, `status_terima`, `isi_form`) VALUES
-(1, 7, 1, 6, 'terima', '<p>Saya adalah form</p>');
 
 -- --------------------------------------------------------
 
@@ -124,11 +118,22 @@ INSERT INTO `t_form` (`id_form`, `id_perusahaan`, `id_account`, `id_request`, `s
 
 CREATE TABLE `t_jadwal` (
   `id_jadwal` int(11) NOT NULL,
-  `id_request` int(11) NOT NULL,
   `hari` varchar(11) NOT NULL,
   `start_work` int(11) NOT NULL,
   `finish_work` int(11) NOT NULL,
   `daily_activity` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_lulusan`
+--
+
+CREATE TABLE `t_lulusan` (
+  `id_lulusan` int(11) NOT NULL,
+  `id_pendidikan` int(11) NOT NULL,
+  `nama_lulusan` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -145,13 +150,6 @@ CREATE TABLE `t_notifikasi` (
   `tgl_waktu` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `t_notifikasi`
---
-
-INSERT INTO `t_notifikasi` (`id_notifikasi`, `id_account`, `id_form`, `pesan`, `tgl_waktu`) VALUES
-(2, 1, 1, 'fsdfdsfsd', '2018-07-11 20:44:46');
-
 -- --------------------------------------------------------
 
 --
@@ -161,16 +159,8 @@ INSERT INTO `t_notifikasi` (`id_notifikasi`, `id_account`, `id_form`, `pesan`, `
 CREATE TABLE `t_pendidikan` (
   `id_pendidikan` int(11) NOT NULL,
   `id_detail_account` int(11) NOT NULL,
-  `nama_jenjang` varchar(11) NOT NULL,
-  `nama_lulusan` varchar(50) NOT NULL
+  `nama_jenjang` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `t_pendidikan`
---
-
-INSERT INTO `t_pendidikan` (`id_pendidikan`, `id_detail_account`, `nama_jenjang`, `nama_lulusan`) VALUES
-(1, 2, 'Kuliah', 'S1 Komputer');
 
 -- --------------------------------------------------------
 
@@ -180,18 +170,11 @@ INSERT INTO `t_pendidikan` (`id_pendidikan`, `id_detail_account`, `nama_jenjang`
 
 CREATE TABLE `t_pengalaman` (
   `id_pengalaman` int(11) NOT NULL,
-  `jangka_waktu` varchar(20) NOT NULL,
+  `jangka_waktu` int(11) NOT NULL,
   `tempat_kerja` varchar(20) NOT NULL,
   `nama_pekerjaan` varchar(50) NOT NULL,
   `id_detail_account` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `t_pengalaman`
---
-
-INSERT INTO `t_pengalaman` (`id_pengalaman`, `jangka_waktu`, `tempat_kerja`, `nama_pekerjaan`, `id_detail_account`) VALUES
-(1, '13 Bulan', 'PT Forcesha', 'Web Developer', 2);
 
 -- --------------------------------------------------------
 
@@ -201,16 +184,16 @@ INSERT INTO `t_pengalaman` (`id_pengalaman`, `jangka_waktu`, `tempat_kerja`, `na
 
 CREATE TABLE `t_perusahaan` (
   `id_perusahaan` int(11) NOT NULL,
-  `nama_perusahaan` varchar(50) NOT NULL,
-  `id_account` int(11) NOT NULL
+  `nama_perusahaan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `t_perusahaan`
 --
 
-INSERT INTO `t_perusahaan` (`id_perusahaan`, `nama_perusahaan`, `id_account`) VALUES
-(7, 'PT Arga', 2);
+INSERT INTO `t_perusahaan` (`id_perusahaan`, `nama_perusahaan`) VALUES
+(1, 'PT. Artha'),
+(2, 'PT. Digital');
 
 -- --------------------------------------------------------
 
@@ -225,16 +208,9 @@ CREATE TABLE `t_request` (
   `judul_request` varchar(50) NOT NULL,
   `status` enum('buka','tutup') NOT NULL,
   `syarat` text NOT NULL,
-  `prepare` text NOT NULL,
-  `tgl_publish` datetime NOT NULL
+  `id_jadwal` int(11) NOT NULL,
+  `prepare` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `t_request`
---
-
-INSERT INTO `t_request` (`id_request`, `id_perusahaan`, `id_account`, `judul_request`, `status`, `syarat`, `prepare`, `tgl_publish`) VALUES
-(6, 7, 2, 'Dicari IT Developer', 'tutup', 'Min. 5 tahun pengalaman sebagai developer', 'mental', '2018-07-11 19:55:34');
 
 --
 -- Indexes for dumped tables
@@ -277,6 +253,13 @@ ALTER TABLE `t_jadwal`
   ADD PRIMARY KEY (`id_jadwal`);
 
 --
+-- Indexes for table `t_lulusan`
+--
+ALTER TABLE `t_lulusan`
+  ADD PRIMARY KEY (`id_lulusan`),
+  ADD KEY `jenjang_id_pendidikan_t_pendidikan_fk` (`id_pendidikan`);
+
+--
 -- Indexes for table `t_notifikasi`
 --
 ALTER TABLE `t_notifikasi`
@@ -295,7 +278,8 @@ ALTER TABLE `t_pendidikan`
 -- Indexes for table `t_pengalaman`
 --
 ALTER TABLE `t_pengalaman`
-  ADD PRIMARY KEY (`id_pengalaman`);
+  ADD PRIMARY KEY (`id_pengalaman`),
+  ADD KEY `pengalaman_id_detail_account_t_detail_account_fk` (`id_detail_account`);
 
 --
 -- Indexes for table `t_perusahaan`
@@ -308,6 +292,7 @@ ALTER TABLE `t_perusahaan`
 --
 ALTER TABLE `t_request`
   ADD PRIMARY KEY (`id_request`),
+  ADD KEY `daily_id_jadwal_t_jadwal_fk` (`id_jadwal`),
   ADD KEY `creator_id_account_t_account_fk` (`id_account`),
   ADD KEY `asal_id_perusahaan_t_perusahaan_fk` (`id_perusahaan`);
 
@@ -331,13 +316,13 @@ ALTER TABLE `t_detail_account`
 -- AUTO_INCREMENT for table `t_detail_perusahaan`
 --
 ALTER TABLE `t_detail_perusahaan`
-  MODIFY `id_detail_perusahaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_detail_perusahaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `t_form`
 --
 ALTER TABLE `t_form`
-  MODIFY `id_form` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_form` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `t_jadwal`
@@ -346,34 +331,40 @@ ALTER TABLE `t_jadwal`
   MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `t_lulusan`
+--
+ALTER TABLE `t_lulusan`
+  MODIFY `id_lulusan` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `t_notifikasi`
 --
 ALTER TABLE `t_notifikasi`
-  MODIFY `id_notifikasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_notifikasi` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `t_pendidikan`
 --
 ALTER TABLE `t_pendidikan`
-  MODIFY `id_pendidikan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pendidikan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `t_pengalaman`
 --
 ALTER TABLE `t_pengalaman`
-  MODIFY `id_pengalaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pengalaman` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `t_perusahaan`
 --
 ALTER TABLE `t_perusahaan`
-  MODIFY `id_perusahaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_perusahaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `t_request`
 --
 ALTER TABLE `t_request`
-  MODIFY `id_request` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_request` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -400,6 +391,12 @@ ALTER TABLE `t_form`
   ADD CONSTRAINT `permintaan_id_request_t_request_fk` FOREIGN KEY (`id_request`) REFERENCES `t_request` (`id_request`);
 
 --
+-- Constraints for table `t_lulusan`
+--
+ALTER TABLE `t_lulusan`
+  ADD CONSTRAINT `jenjang_id_pendidikan_t_pendidikan_fk` FOREIGN KEY (`id_pendidikan`) REFERENCES `t_pendidikan` (`id_pendidikan`);
+
+--
 -- Constraints for table `t_notifikasi`
 --
 ALTER TABLE `t_notifikasi`
@@ -413,11 +410,18 @@ ALTER TABLE `t_pendidikan`
   ADD CONSTRAINT `jenjang_id_detail_account_t_detail_account_fk` FOREIGN KEY (`id_detail_account`) REFERENCES `t_detail_account` (`id_detail_account`);
 
 --
+-- Constraints for table `t_pengalaman`
+--
+ALTER TABLE `t_pengalaman`
+  ADD CONSTRAINT `pengalaman_id_detail_account_t_detail_account_fk` FOREIGN KEY (`id_detail_account`) REFERENCES `t_detail_account` (`id_detail_account`);
+
+--
 -- Constraints for table `t_request`
 --
 ALTER TABLE `t_request`
   ADD CONSTRAINT `asal_id_perusahaan_t_perusahaan_fk` FOREIGN KEY (`id_perusahaan`) REFERENCES `t_perusahaan` (`id_perusahaan`),
-  ADD CONSTRAINT `creator_id_account_t_account_fk` FOREIGN KEY (`id_account`) REFERENCES `t_account` (`id_account`);
+  ADD CONSTRAINT `creator_id_account_t_account_fk` FOREIGN KEY (`id_account`) REFERENCES `t_account` (`id_account`),
+  ADD CONSTRAINT `daily_id_jadwal_t_jadwal_fk` FOREIGN KEY (`id_jadwal`) REFERENCES `t_jadwal` (`id_jadwal`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

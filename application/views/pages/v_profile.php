@@ -121,7 +121,7 @@
                                 <?php
                                   if($this->session->userdata('username') == @$results->username) {
                                 ?>
-                                <td><a href="<?= site_url("profile/editpendidikan/".$row_pendidikan->id_pendidikan) ?>" class="btn btn-warning">Edit</a> <a href="<?= site_url("profile/deletependidikan/".$row_pendidikan->id_pendidikan) ?>" class="btn btn-danger">Delete</a></td>
+                                <td><a href="<?= site_url("profile/editpendidikan/".$row_pengalaman->id_pengalaman) ?>" class="btn btn-warning">Edit</a> <a href="<?= site_url("profile/deletependidikan/".$row_pengalaman->id_pengalaman) ?>" class="btn btn-danger">Delete</a></td>
                                 <?php
                                   }
                                 ?>
